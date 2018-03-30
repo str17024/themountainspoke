@@ -56,7 +56,7 @@
     
   <main>
 	  <p>
-    <h2 text-align="center">The Mountain Spoke</h2>
+    <h2 text-align="center">The Mountain Spoke Adventures</h2>
 	  
 	  
 </br>
@@ -65,25 +65,42 @@
 </br>
 <div class="weathersummary">
     <div class="franklinimage">
-      <img src="houses.jpeg" alt="greenvilleimage" width="100%">
+      <img src="bikeadventure2.jpg" alt="greenvilleimage" width="100%">
     </div>
       <aside class="sidebar1">
-      <h3 >Weather Summary</h3>   
+      <h3 >Cycle the Continental Divide </h3>   
       
       <div class="highlow">
-        <p class="box1">Sunny Today with a small chance of clouds!</p>
-        <div class="box2">High: 74</div>  
-        <div class="box3">Low: 54</div>  
+        <p class="box1">This adventure takes you everyone. City, Mountains, and More!</p>
+          <p class="box1">Please sign up on the Events page!</p>
+        <div class="box2">* Bring your Bike, gear, water, and a lunch!</div>  
+        <div class="box3">*No Pets</div>  
           <p></p>
-        <div>Precipitation: low</div>  
-        <div>Wind Speed: 4mph</div>  
+         
       </div> 
     </aside>
         
       </div>           
     
 
-
+<div class="weathersummary">
+    <div class="franklinimage">
+      <img src="bikeadventure1.jpg" alt="greenvilleimage" width="100%">
+    </div>
+      <aside class="sidebar1">
+      <h3 >Tornado Alley</h3>   
+      
+      <div class="highlow">
+        <p class="box1">This adventure takes you near Tornados and More!</p>
+          <p class="box1">Please sign up on the Events page!</p>
+        <div class="box2">* Bring your Bike, gear, water, and a lunch!</div>  
+        <div class="box3">*No Pets</div>  
+          <p></p>
+         
+      </div> 
+    </aside>
+        
+      </div> 
 
 
 
@@ -186,48 +203,6 @@
   <script src="windchill2.js"></script>
 
 
-     <script> 
-            var article = document.querySelector('article');
-            var requestURL = 'https://byui-cit230.github.io/weather/data/towndata.json';
-            var request = new XMLHttpRequest();
-            request.open('GET', requestURL);
-            request.responseType = 'json';
-            request.send();
-            request.onload = function() {
-                var towns = request.response;
-                showGreenville(towns);
-            }
-            function showGreenville(jsonObj) {
-                var towns = jsonObj['towns'];
-                var myH3 = document.createElement('h3');
-                var myPara1 = document.createElement('p');
-                var myPara2 = document.createElement('p');
-                var myPara3 = document.createElement('p');
-                var myPara4 = document.createElement('p');
-                var myPara5 = document.createElement('p');
-                var myList = document.createElement('ul');
-                
-                myH3.textContent = towns[1].name;
-                myPara1.textContent = 'Motto: ' + towns[1].motto;
-                myPara2.textContent = 'Year Founded: ' + towns[1].yearFounded;
-                myPara3.textContent = 'Current Population: ' + towns[1].currentPopulation;
-                myPara4.textContent = 'Average Rainfall: ' + towns[1].averageRainfall;
-                myPara5.textContent = 'Events: ';
-
-                var events = towns[1].events;
-                for (var j = 0; j < events.length; j++) {
-                  var listItem = document.createElement('li');
-                  listItem.textContent = events[j];
-                  myList.appendChild(listItem);
-                }
-                article.appendChild(myH3);
-                article.appendChild(myPara1);
-                article.appendChild(myPara2);
-                article.appendChild(myPara3);
-                article.appendChild(myPara4);
-                article.appendChild(myPara5);
-                article.appendChild(myList);
-            }
-        </script>
+     
 
 </html>
