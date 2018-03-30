@@ -1,0 +1,230 @@
+
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Mountain Spoke Events Page</title>
+  <meta name="author" content="Ken Strobell">
+  <meta name="the local events in Bozeman." content="THE Events Site">
+ 	
+	
+	
+  <!-- external style references in the proper cascading order -->    
+  <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">  <!-- Google API font reference -->
+  <link href="normalize.css" rel="stylesheet"> <!-- normalize useragent/browser defaults -->
+  <link href="main.css" rel="stylesheet">   <!-- default styles - small/phone views -->
+  <link href="medium-5.css" rel="stylesheet">  <!-- medium/tablet views -->
+  <link href="large-5.css" rel="stylesheet">   <!-- large/wide/desktop views -->
+  <link href="small.css" rel="stylesheet">   <!-- small views --> 	
+</head>
+<body>
+
+  
+    
+    
+  <header>
+    	  
+    <img src="sunnyday1.jpeg" alt="CoatOrNot site logo" width="20%" height="70em" >
+    <h1>CoatOrNot</h1>
+    <div class="subheading">Should I bring a coat... or not?</div>
+	
+  </header>
+
+  <!-- site navigation use placeholder references -->
+	
+</br>
+</br>
+</br>
+</br>
+
+  <nav class="clearfix">
+    <button onclick="toggleMenu()">&#9776;</button>
+	 <ul id="primaryNav" class="hide"> 
+	    <li><a class="active" href="https://str17024.github.io/themountainspoke/">Home</a></li>
+	  <li><a href="adventuretours.html">Adventure Tours</a></li>
+	  <li><a href="events.html">Events</a></li>
+	  <li><a href="sales.html">Sales</a></li>
+	  <li><a href="services.html">Service</a></li>
+	  <li><a href="contactus.html">Contact Us</a></li>
+         </ul>
+</nav>		
+    
+    
+ <div id="main">		
+  
+    
+  <main>
+	  <p>
+    <h2 text-align="center">The Mountain Spoke Events</h2>
+	  
+	  
+</br>
+</br>
+</br>
+</br>
+<div class="weathersummary">
+    <div class="franklinimage">
+      <img src="houses.jpeg" alt="greenvilleimage" width="100%">
+    </div>
+      <aside class="sidebar1">
+      <h3 >Weather Summary</h3>   
+      
+      <div class="highlow">
+        <p class="box1">Sunny Today with a small chance of clouds!</p>
+        <div class="box2">High: 74</div>  
+        <div class="box3">Low: 54</div>  
+          <p></p>
+        <div>Precipitation: low</div>  
+        <div>Wind Speed: 4mph</div>  
+      </div> 
+    </aside>
+        
+      </div>           
+    
+
+
+
+
+
+
+
+
+</div>
+
+      
+
+
+<div>
+
+
+</div>
+
+<p>
+    
+	    <p>
+      
+	    </p>
+	    </br>
+       </br>
+      <p class="town-article">
+	      </br>
+		
+        <!--<img src="sunnydaylong.jpeg" alt="long sunny day pic" width="10%" height="100em"> -->
+		
+
+
+        <p>
+        <!--<div class="town-articletext">    
+        !!Short article content placeholder. But imagine the amazing articles that section will hold!! Like google api fonts.
+        </div>    -->
+        
+<section class="forecast">
+          <h3>10 Day Forecast</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Day 1</th>
+                <th>Day 2</th>
+                <th>Day 3</th>
+                <th>Day 4</th>
+                <th>Day 5</th>
+                <th>Day 6</th>
+                <th>Day 7</th>
+                <th>Day 8</th>
+                <th>Day 9</th>
+                <th>Day 10</th>
+              </tr>
+            </thead>
+            <tbody>  
+              <tr>
+                <td>89&deg;F</td>
+                <td>87&deg;F</td>
+                <td>78&deg;F</td>
+                <td>75&deg;F</td>
+                <td>72&deg;F</td>
+                <td>72&deg;F</td>
+                <td>79&deg;F</td>
+                <td>83&deg;F</td>
+                <td>85&deg;F</td>
+                <td>89&deg;F</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+</p>
+<div id="franklinevents">
+<article>
+</article>
+</div>
+<section class="grid">
+
+</section>
+  </main>
+    
+</br>
+</br>
+</br>
+</br>
+<p>
+</body>
+  <footer>
+    <aside>
+      Contact information: Ken Strobell
+    </aside>
+    <p class="footer-bar"> &copy;2018 All Rights Reserved &vert; CoatOrNot &vert;Todays date listed below!<span id="currentdate.js"></span></p>
+  </footer>
+
+  
+
+  <script src="hamburger.js"></script>
+  <script src="currentdate.js"></script>
+  <script src="windchill.js"></script>
+  <script src="windchill2.js"></script>
+
+
+     <script> 
+            var article = document.querySelector('article');
+            var requestURL = 'https://byui-cit230.github.io/weather/data/towndata.json';
+            var request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'json';
+            request.send();
+            request.onload = function() {
+                var towns = request.response;
+                showGreenville(towns);
+            }
+            function showGreenville(jsonObj) {
+                var towns = jsonObj['towns'];
+                var myH3 = document.createElement('h3');
+                var myPara1 = document.createElement('p');
+                var myPara2 = document.createElement('p');
+                var myPara3 = document.createElement('p');
+                var myPara4 = document.createElement('p');
+                var myPara5 = document.createElement('p');
+                var myList = document.createElement('ul');
+                
+                myH3.textContent = towns[1].name;
+                myPara1.textContent = 'Motto: ' + towns[1].motto;
+                myPara2.textContent = 'Year Founded: ' + towns[1].yearFounded;
+                myPara3.textContent = 'Current Population: ' + towns[1].currentPopulation;
+                myPara4.textContent = 'Average Rainfall: ' + towns[1].averageRainfall;
+                myPara5.textContent = 'Events: ';
+
+                var events = towns[1].events;
+                for (var j = 0; j < events.length; j++) {
+                  var listItem = document.createElement('li');
+                  listItem.textContent = events[j];
+                  myList.appendChild(listItem);
+                }
+                article.appendChild(myH3);
+                article.appendChild(myPara1);
+                article.appendChild(myPara2);
+                article.appendChild(myPara3);
+                article.appendChild(myPara4);
+                article.appendChild(myPara5);
+                article.appendChild(myList);
+            }
+        </script>
+
+</html>
